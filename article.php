@@ -28,17 +28,19 @@
             <a href="<?php $this->permalink(); ?>"><?php $this->title() ?></a>
         </h2>
     
-        <section class="article-meta">
-            <ul>
-                <li><?php $this->date('Y/m/d'); ?></li>
-                <li><span>|</span></li>
-                <?php if (!$this->is('page')): ?>
-                <li><?php $this->category(', '); ?></li>
-                <li><span>|</span></li>
-                <?php endif; ?>
-                <li><?php $this->commentsNum('%d Replies'); ?></li>
-            </ul>
-        </section>
+        <ul class="article-meta">
+            <li><?php $this->date('Y/m/d'); ?></li>
+            <li><span>|</span></li>
+            <?php if (!$this->is('page')): ?>
+            <li><?php $this->category(', '); ?></li>
+            <li><span>|</span></li>
+            <?php endif; ?>
+            <li>
+                <a href="<?php $this->permalink(); ?>#comments" rel="external nofollow">
+                    <?php $this->commentsNum('%d Replies'); ?>
+                </a>
+            </li>
+        </ul>
 
         <section class="article-content">
             <?php if ($this->is('archive') || $this->is('index')):

@@ -1,7 +1,7 @@
 /**
  *  全局
  */
-body, ul, ol, li, h1, h2, h3, h4, h5, h6, p {
+body {
     margin: 0px;
     padding: 0px;
 }
@@ -11,9 +11,6 @@ body {
     color: #444;
     background: #fff;
     word-break: break-word;
-}
-ul, ol, li {
-    list-style: none;
 }
 hr {
     margin: 30px 0;
@@ -62,6 +59,12 @@ img {
     transform: rotate(-45deg);
 }
 
+@media (max-width: 600px) {
+    #back-to-top {
+        display: none !important;
+    }
+}
+
 /**
  *  导航栏
  */
@@ -81,6 +84,7 @@ img {
 .navbar-header {
     float: left;
     height: 30px;
+    margin: 0px;
     padding-right: 50px;
 }
 .navbar-header a {
@@ -109,6 +113,10 @@ img {
     float: left;
 }
 
+.navbar-nav {
+    margin: 0px;
+    padding-left: 0px;
+}
 .navbar-nav li {
     display: inline-block;
     margin-right: 15px;
@@ -271,12 +279,9 @@ tr:first-child a {
     text-decoration: none;
 }
 
-/**
- * 正文
- */
-.content {
+.article-list, .side-list {
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 /**
@@ -299,12 +304,15 @@ tr:first-child a {
  * 首页 Notice
  */
 #notice {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding: 5px 20px;
     border: 1px solid #e7e7e7;
     -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,.07);
     -moz-box-shadow: 1px 1px 1px 0 rgba(0,0,0,.07);
     box-shadow: 1px 1px 1px 0 rgba(0,0,0,.07);
+}
+#notice * {
+    margin: 0px;
 }
 
 
@@ -313,70 +321,68 @@ tr:first-child a {
  */
 .article-list .article {
     margin-bottom: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ededed;
 }
-.article-list .article-content a {
+.article-content {
+    padding-bottom: 20px;
+}
+.article-content a {
     color: #5895be;
 }
-.article .article-title {
+.article-title {
+    margin-bottom: 0px;
     font-size: 18px;
     line-height: 24px;
 }
-.article .article-title a {
+.article-title a {
     color: #444;
 }
-.article .article-title a:hover {
+.article-title a:hover {
     color: #5895be;
 }
-.article .article-meta {
-    padding-bottom: 20px;
+.article-meta {
     font-size: 12px;
     color: #777;
+    padding: 0px;
+    margin-top: 0px;
 }
-.article .article-meta a {
+.article-meta a {
     color: #777;
 }
-.article .article-meta a:hover {
+.article-meta a:hover {
     color: #5895be;
 }
-.article-meta ul li {
+.article-meta li {
     display: inline-block;
 }
-.article-meta ul li span {
+.article-meta li span {
     color: #aaa;
     padding: 0 5px;
 }
 
-.article-content p {
-    margin-bottom: 20px;
-    line-height: 1.8em;
-}
-.article-content ul {
-    margin: 0 0 24px 30px;
-}
 .article-content ul li {
-    margin-bottom: 5px;
     list-style: square outside none;
     line-height: 24px;
 }
 
 .article-tags {
-    margin-top: 10px;
     padding: 15px 0;
     border-top: 1px solid #ededed;
+}
+.article-tags a, .article-near a {
+    color: #5895be;
 }
 .article-near {
     padding: 16px 0;
     border-top: 1px solid #ededed;
     border-bottom: 1px solid #ededed;
 }
-.article-tags a, .article-near a {
-    color: #5895be;
-}
+.article-near p { margin: 0px; }
 
 
 .page-navigator {
+    padding-left: 0px;
     color: #4a4a4a;
     list-style: none;
     line-height: 24px;
@@ -443,8 +449,7 @@ tr:first-child a {
  *  评论
  */
 #comments {
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding-top: 10px;
 }
 .new-comment {
     margin-bottom: 30px;
@@ -476,6 +481,7 @@ tr:first-child a {
     border: 1px solid #ddd;
 }
 .new-comment textarea {
+    margin-top: 6px;
     min-height: 70px;
     width: 100%;
     font: normal 14px/1.8 Helvetica, Arial, sans-serif;
@@ -504,6 +510,10 @@ tr:first-child a {
     border-radius: 2px;
 }
 
+.comment-list {
+    list-style: none;
+    padding-left: 0px;
+}
 .comment-author img {
     width: 50px;
     height: 50px;
@@ -528,6 +538,9 @@ tr:first-child a {
 }
 .comment-content {
     padding: 10px 0;
+}
+.comment-content p {
+    margin: 5px;
 }
 .comment-parent {
     margin-bottom: 24px;
@@ -565,7 +578,6 @@ tr:first-child a {
     border-bottom-color: #e5e5e5;
 }
 .comment-children .comment-child {
-    padding-bottom: 10px;
     padding-top: 10px;
     border-top: 1px solid #ededed;
 }
@@ -597,9 +609,9 @@ tr:first-child a {
 code {
     overflow: auto;
     display: inline-block;
-    margin: 0;
+    margin: 0 3px;
     padding: 0 3px;
-    vertical-align: bottom;
+    vertical-align: middle;
     border: 1px solid #ddd;
     border-radius: 3px;
     font: normal 12px/19px Consolas, 'Liberation Mono', Courier, monospace;
@@ -608,8 +620,9 @@ code {
     background: #f8f8f8;
 }
 pre code {
-    display: block;
+    margin: 0px;
     padding: 6px 10px !important;
+    display: block;
 }
 blockquote {
     border-left: 4px solid #ddd;
@@ -621,7 +634,7 @@ blockquote {
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #ddd;
 }
 .article-content table th {
     font-weight: bold;

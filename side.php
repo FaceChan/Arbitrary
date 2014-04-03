@@ -1,4 +1,4 @@
-<section class="side-list col-4 kit-hidden-tb">
+<section class="side-list col-4 col-mb-12">
     <article class="article recent-posts">
         <h3>最新文章</h3>
         <ul>

@@ -7,8 +7,8 @@ $(document).ready(function() {
         }
     });
     $('#back-to-top').click( function() { 
-        $('body').animate({
-            scrollTop: $('body').offset().top
+        $('html, body').animate({
+            scrollTop: $('html, body').offset().top
         }, 800);
         return false;
     });
@@ -21,7 +21,7 @@ $(document).ready(function() {
             return false;
         }
     });
-    $("body").on("click", ".page-navigator li a", function(e) {
+    $("html, body").on("click", ".page-navigator li a", function(e) {
         e.preventDefault();
         var dom = $(this);
         var content = dom.attr('href').indexOf("comments") !== -1 ? "comments" : "article";
@@ -31,7 +31,7 @@ $(document).ready(function() {
             data: "action=ajax_" + content,
             success: function(data) {
                 parents.replaceWith(data);
-                $('body').animate({
+                $('html, body').animate({
                     scrollTop: $("." + content + "-list").offset().top - 40
                 }, 500);
             }
