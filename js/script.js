@@ -21,19 +21,26 @@ $(document).ready(function() {
             return false;
         }
     });
-    $("html, body").on("click", ".page-navigator li a", function(e) {
+    var ajaxed = false;
+    var loading = '<span style="margin-left: 10px; color: #999;">Loding hardly. Please wait ~~~</span>';
+    $("html, body").on("click", "#comments .page-navigator a", function(e) {
         e.preventDefault();
         var dom = $(this);
-        var content = dom.attr('href').indexOf("comments") !== -1 ? "comments" : "article";
-        var parents = content === "article" ? dom.parents('.article-list') : dom.parents('#comments');
+        if (dom.parent().hasClass('current') || ajaxed == true)
+            return;
         $.ajax({
             url: dom.attr('href'),
-            data: "action=ajax_" + content,
+            data: "action=ajax_comments",
+            beforeSend: function() {
+                $('.page-navigator').append(loading);
+                ajaxed = true;
+            },
             success: function(data) {
-                parents.replaceWith(data);
+                $('#comments').replaceWith(data);
                 $('html, body').animate({
-                    scrollTop: $("." + content + "-list").offset().top - 40
+                    scrollTop: $(".comments-list").offset().top - 40
                 }, 500);
+                ajaxed = false;
             }
         });
         return false;

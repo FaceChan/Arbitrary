@@ -9,10 +9,7 @@
  * @link http://blog.sloger.info
  */
 
-if(isset($_GET["action"]) && $_GET["action"] == "ajax_article") {
-    $this->need('article.php');   
-}
-else if(isset($_GET["action"]) && $_GET["action"] == "ajax_comments") {
+if(isset($_GET["action"]) && $_GET["action"] == "ajax_comments") {
     $this->need('comments.php');   
 }
 else {   

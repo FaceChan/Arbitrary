@@ -1,7 +1,6 @@
 <section class="article-list col-8 col-mb-12">
     <?php if (!$this->is('index')): ?>
-    <!-- 在非index页面添加面包屑导航 -->
-    <section class="distant">
+    <section id="breadcrumb">
         <a href="<?php $this->options->siteUrl(); ?>">首页</a>
         <span>&gt;</span>
         <?php if ($this->is('post')): ?>
@@ -13,17 +12,15 @@
         <?php endif; ?>
     </section>
     <?php else: ?>
-    <!-- index页面添加Notice -->
         <?php if ($this->options->indexNotice): ?>
     <section id="notice">
         <p><?php $this->options->indexNotice(); ?></p>
     </section>
         <?php endif; ?>
     <?php endif; ?>
-    <!-- 面包屑导航结束 -->
 
     <?php while($this->next()): ?>
-    <article class="article">
+    <article>
         <h2 class="article-title">
             <a href="<?php $this->permalink(); ?>"><?php $this->title() ?></a>
         </h2>
@@ -57,8 +54,8 @@
         </section>
 
         <section class="article-near">
-            <p>上一篇: <?php $this->thePrev('%s','已是最旧的文章'); ?></p>
-            <p>下一篇: <?php $this->theNext('%s','已是最新的文章'); ?></p>
+            <p>上一篇: <?php $this->thePrev('%s','已是最旧的文章'); ?></p>
+            <p>下一篇: <?php $this->theNext('%s','已是最新的文章'); ?></p>
         </section>
         <?php endif;?>
 

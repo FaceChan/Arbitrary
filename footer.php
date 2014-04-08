@@ -4,9 +4,9 @@
 <footer class="footer">
     <p class="container copyright">
         &copy; <?php echo date('Y'); ?> - <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
-        Theme By <a href="http://blog.sloger.info">Sloger</a>.
-        Designed By <a href="http://mufeng.me">Mufeng</a>.
-        Powered by <a href="http://www.typecho.org">Typecho</a>.
+        Theme By <a href="http://blog.sloger.info" target="_blank">Sloger</a>.
+        Designed By <a href="http://mufeng.me" target="_blank">Mufeng</a>.
+        Powered by <a href="http://www.typecho.org" target="_blank">Typecho</a>.
     </p>
 </footer>
 

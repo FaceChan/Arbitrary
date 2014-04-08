@@ -12,12 +12,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="tdleft">标签</td>
-                        <td class="tdright">
-                            <?php $this->widget('Widget_Metas_Tag_Cloud') ->parse('<a href="{permalink}">{name}</a>'); ?> 
-                        </td>
-                    </tr>                                       
-                    <tr>
                         <td class="tdleft">归档</td>
                         <td class="tdright">
                             <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=Y 年 m 月')->parse('<a href="{permalink}">{date}</a>'); ?>
