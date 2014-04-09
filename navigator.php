@@ -1,3 +1,5 @@
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+
 <article class="dropdown">
     <div class="dropdown-arrow1"></div>
     <div class="dropdown-arrow2"></div>

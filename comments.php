@@ -1,3 +1,5 @@
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+
 <section id="comments">
     <?php $this->comments()->to($comments); ?>
     <?php if($this->allow('comment')): ?>
@@ -30,14 +32,14 @@
 
     <?php else: ?>
 
-    <article>
-        <span>楼主残忍的关闭了评论</span>
-    </article>
+    <h4 class="close-comment">博主残忍地关闭了回复</h4>
 
     <?php endif; ?>
 
+    <?php if ($comments->have()): ?>
     <article class="comments-list">
         <?php $comments->listComments(); ?>
         <?php $comments->pageNav(); ?>
     </article>
+    <?php endif; ?>
 </section>

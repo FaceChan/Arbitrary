@@ -1,4 +1,6 @@
-<section class="side-list col-4 col-mb-12">
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+
+<section class="side-list col-tb-4 col-mb-12">
     <article class="recent-posts">
         <h3>最新文章</h3>
         <ul>

@@ -4,7 +4,7 @@
 
 body {
     margin: 0px;
-    font: normal 14px/1.8 Helvetica, Arial, sans-serif;
+    font: normal 14px/1.8 'Open Sans', "Trebuchet MS", Helvetica, Arial, sans-serif;
     color: #444;
     background: #fff;
     word-break: break-word;
@@ -25,8 +25,10 @@ a:hover {
 }
 img { max-width: 100%; }
 
-.container {
-    max-width: 1000px;
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -39,11 +41,11 @@ img { max-width: 100%; }
  * 代码
  */
 code {
-    overflow: auto;
     display: inline-block;
     margin: 0 3px;
     padding: 0 3px;
     vertical-align: middle;
+    overflow: auto;
     border: 1px solid #ddd;
     border-radius: 3px;
     font: normal 12px/19px Consolas, 'Liberation Mono', Courier, monospace;
@@ -57,20 +59,31 @@ pre code {
     display: block;
 }
 blockquote {
-    border-left: 4px solid #ddd;
-    padding: 0 25px;
+    margin: 0px;
+    padding: 15px 20px;
+    border-left: 6px solid #ddd;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     color: #555;
+    background-color: rgba(102, 128, 153, .05);
+}
+table {
+    border-collapse: collapse;
 }
 th, td {
     padding: 8px;
     line-height: 20px;
-    text-align: left;
     vertical-align: top;
-    border-bottom: 1px solid #ddd;
 }
-th {
-    font-weight: bold;
+th { font-weight: bold; }
+td { border-top: 1px solid #ddd; }
+
+
+dt, dd {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+dt { font-weight: bold; }
 
 ::selection {
     text-shadow: none;
@@ -285,10 +298,10 @@ th {
     -webkit-border-radius: 2px;
     border-radius: 2px;
 }
-th, td {
+.dropdown th, .dropdown td {
     vertical-align: top;
-    text-align: left;
     font-weight: normal;
+    border-top: 0;
 }
 .tdleft {
     width: 45px;
@@ -321,6 +334,14 @@ tr:first-child a {
 .article-list, .side-list {
     padding-top: 40px;
     padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+    .article-list {
+        padding-right: 15px !important;
+    }
+    .side-list {
+        padding-left: 15px !important;
+    }
 }
 
 /**
@@ -358,7 +379,7 @@ tr:first-child a {
 /**
  *  文章列表
  */
-.article-list article {
+.article-list > article {
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ededed;
@@ -546,6 +567,12 @@ tr:first-child a {
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     border-radius: 2px;
+}
+
+.close-comment {
+    margin: 0px;
+    padding-top: 10px;
+    border-top: 1px solid #ededed;
 }
 
 .comment-list {

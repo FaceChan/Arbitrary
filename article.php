@@ -1,4 +1,6 @@
-<section class="article-list col-8 col-mb-12">
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+
+<section class="article-list col-tb-8 col-mb-12">
     <?php if (!$this->is('index')): ?>
     <section id="breadcrumb">
         <a href="<?php $this->options->siteUrl(); ?>">首页</a>
